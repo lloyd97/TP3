@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<robot name="human_hand">
+
+<!-- colors -->
+
+	<material name="blue">
+		<color rgba="0 0 0.8 1"/>
+	</material>
+
+	<material name="green">
+		<color rgba="0 1 0 1"/>
+	</material>
+
+	<material name="yellow">
+		<color rgba="1 0.8 0 1"/>
+	</material>
+
+	<material name="white">
+		<color rgba="1 1 1 1"/>
+	</material>
+
+	<material name="red">
+		<color rgba="1 0 0 1"/>
+	</material>
+
+<!-- forearm -->
+
+	<link name="base_link">
+		<visual>
+			<geometry>
+				<cylinder length="0.8" radius="0.2"/>			
+			</geometry>
+			<material name="white"/>
+		</visual>
+	</link>
+	
+<!-- palm -->
+	<link name="palm">
+		<visual>
+		<origin rpy="0.0 0 0" xyz="0.0 0 0.4"/>
+			<geometry>
+				<box size="0.6 0.4 0.8" />
+			</geometry>
+			<material name="blue"/>
+		</visual>		
+	</link>
+
+	<joint name="forearm" type="fixed">
+        	<parent link="base_link"/>
+        	<child link="palm"/>
+        	<origin rpy="0 0 0" xyz="0.0 0.0 0.4"/>
+        </joint>
+
+<!-- first -->
+
+	<link name="first_finger">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0.0 0.2"/>
+			<geometry>
+				<cylinder length="0.4" radius="0.05"/>
+			</geometry>
+			<material name="green"/>
+		</visual>
+	</link>
+
+	<joint name="finger_one" type="fixed">
+        	<parent link="palm"/>
+        	<child link="first_finger"/>
+        	<origin rpy="0 0 0" xyz="0.0 0.0 0.8"/>
+        </joint>
+
+<!-- first finger 2nd part -->
+	<link name="first_finger_part_two">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0.0 0.15"/> <!---->
+			<geometry>
+				<cylinder length="0.3" radius="0.05"/>
+			</geometry>	
+			<material name="red"/>
+		</visual>
+	</link>
+
+	<joint name="finger_one_part_two" type="fixed">
+        	<parent link="first_finger"/>
+        	<child link="first_finger_part_two"/>
+        	<origin  rpy="0.4 0 0" xyz="0.0 0.0 0.4"/>
+        </joint>
+<!-- first finger 3rd part -->
+	<link name="first_finger_part_three">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0 0.1"/> 
+			<geometry>
+				<cylinder length="0.2" radius="0.05"/>
+			</geometry>
+			<material name="yellow"/>
+		</visual>
+	</link>
+
+	<joint name="finger_one_part_three" type="fixed">
+        	<parent link="first_finger_part_two"/>
+        	<child link="first_finger_part_three"/>
+        	<origin  rpy="0.2 0 0" xyz="0.0 0.0 0.3"/>
+        </joint>
+
+<!-- second finger--> 
+
+	<link name="second_finger">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0.0 0.2"/>
+			<geometry>
+				<cylinder length="0.4" radius="0.05"/>
+			</geometry>
+			<material name="green"/>
+		</visual>
+	</link>
+
+	<joint name="finger_two" type="fixed">
+        	<parent link="palm"/>
+        	<child link="second_finger"/>
+        	<origin xyz="0.2 0.0 0.8"/>
+        </joint>
+<!-- second finger 2nd part --> 
+	<link name="second_finger_part_two">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0.0 0.15"/>
+			<geometry>
+				<cylinder length="0.3" radius="0.05"/>
+			</geometry>
+			<material name="red"/>
+		</visual>
+	</link>
+
+	<joint name="finger_two_part_two" type="fixed">
+        	<parent link="second_finger"/>
+        	<child link="second_finger_part_two"/>
+        	<origin  rpy="1.7 0 0" xyz="0.0 0.0 0.4"/>
+        </joint>
+<!-- second finger 3rd part --> 
+	<link name="second_finger_part_three">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0.0 0.1"/>
+			<geometry>
+				<cylinder length="0.2" radius="0.05"/>
+			</geometry>
+			<material name="yellow"/>
+		</visual>
+	</link>
+
+	<joint name="finger_two_part_three" type="fixed">
+        	<parent link="second_finger_part_two"/>
+        	<child link="second_finger_part_three"/>
+        	<origin  rpy="1.3 0 0" xyz="0.0 0.0 0.3"/>
+        </joint>
+<!-- third finger -->
+	<link name="third_finger">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0.0 0.2"/>
+			<geometry>
+				<cylinder length="0.4" radius="0.05"/>
+			</geometry>
+			<material name="green"/>
+		</visual>
+	</link>
+
+	<joint name="finger_three" type="fixed">
+        	<parent link="palm"/>
+        	<child link="third_finger"/>
+        	<origin xyz="-0.2 0.0 0.8"/>
+        </joint>
+<!-- third finger 2nd part --> 
+	<link name="third_finger_part_two">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0.0 0.15"/>
+			<geometry>
+				<cylinder length="0.3" radius="0.05"/>
+			</geometry>
+			<material name="red"/>
+		</visual>
+	</link>
+
+	<joint name="finger_three_part_two" type="fixed">
+        	<parent link="third_finger"/>
+        	<child link="third_finger_part_two"/>
+        	<origin  rpy="1.7 0 0" xyz="0.0 0.0 0.4"/>
+        </joint>
+<!-- third finger 3rd part --> 
+	<link name="third_finger_part_three">
+		<visual>
+			<origin rpy="0 0 0" xyz="0 0.0 0.1"/>
+			<geometry>
+				<cylinder length="0.2" radius="0.05"/>
+			</geometry>
+			<material name="yellow"/>
+		</visual>
+	</link>
+
+	<joint name="finger_three_part_three" type="fixed">
+        	<parent link="third_finger_part_two"/>
+        	<child link="third_finger_part_three"/>
+        	<origin  rpy="1.3 0 0" xyz="0.0 0.0 0.3"/>
+        </joint>
+<!-- thumb -->
+
+	<link name="thumb">
+		<visual>
+		<origin rpy="0.1 0.9 0" xyz="0.1 0 0.1"/>
+			<geometry>
+				<cylinder length="0.3" radius="0.05"/>
+			</geometry>
+			<material name="green"/>
+		</visual>
+	</link>
+
+	<joint name="thumb_joint" type="fixed">
+        	<parent link="palm"/>
+        	<child link="thumb"/>
+        	<origin rpy="0 0 0" xyz="0.3 0.0 0.3"/>
+        </joint>
+<!-- thumb 2nd part-->
+	<link name="thumb_part_two">
+		<visual>
+			<origin rpy="0.2 1 0" xyz="0.1 0 0.05"/>
+			<geometry>
+				<cylinder length="0.2" radius="0.05"/>
+			</geometry>
+		</visual>
+	</link>
+
+	<joint name="part_two_thumb" type="fixed">
+        	<parent link="thumb"/>
+        	<child link="thumb_part_two"/>
+        	<origin  rpy="0.5 -1.5 0" xyz="0.2 0.0 0.2"/>
+        </joint>
+</robot>
+
+
+
+
+
+
+
+
+
+
+
+

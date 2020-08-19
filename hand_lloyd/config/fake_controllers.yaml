@@ -1,0 +1,23 @@
+controller_list:
+  - name: fake_finger_one_controller
+    joints:
+      - finger_one
+      - finger_one_part_two
+      - finger_one_part_three
+  - name: fake_finger_two_controller
+    joints:
+      - finger_two
+      - finger_two_part_two
+      - finger_two_part_three
+  - name: fake_finger_three_controller
+    joints:
+      - finger_three
+      - finger_three_part_two
+      - finger_three_part_three
+  - name: fake_thumb_controller
+    joints:
+      - thumb_joint
+      - part_two_thumb
+initial:  # Define initial robot poses.
+  - group: finger_one
+    pose: fingerOne

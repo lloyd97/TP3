@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="mesh">
+  <link name="base_link">
+    <visual>
+    <origin rpy="0.0 0 0" xyz="0.5 0 0"/>
+      <geometry>
+        <mesh filename="package://udm_urdf/mesh/Part Studio 1.stl"/>
+      </geometry>
+    </visual>
+  </link>
+</robot>
