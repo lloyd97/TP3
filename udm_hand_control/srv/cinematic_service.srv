@@ -1,0 +1,8 @@
+std_msgs/Float32 orientation 
+std_msgs/Float32 posex 
+std_msgs/Float32 posey 
+std_msgs/Float32 posez
+std_msgs/String group
+---
+bool res
+string message

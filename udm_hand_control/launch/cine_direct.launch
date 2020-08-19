@@ -1,0 +1,6 @@
+<launch>
+
+  <node name="udm_service" pkg="udm_hand_control" type="move_hand.py" respawn="false" output="screen" args="1 0 0 'finger_one'">
+  </node>
+
+</launch>

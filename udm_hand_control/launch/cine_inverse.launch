@@ -1,0 +1,6 @@
+<launch>
+
+  <node name="cinematic_service" pkg="udm_hand_control" type="cineInverse.py" respawn="false" output="screen" args="1 0 0 0 'finger_one'">
+  </node>
+
+</launch>

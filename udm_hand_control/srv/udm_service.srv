@@ -1,0 +1,7 @@
+std_msgs/Float32 joint_goal1 
+std_msgs/Float32 joint_goal2 
+std_msgs/Float32 joint_goal3 
+std_msgs/String group
+---
+bool res
+string message
